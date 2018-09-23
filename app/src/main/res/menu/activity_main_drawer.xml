@@ -13,13 +13,13 @@
             android:icon="@drawable/ic_comprendre_24dp"
             android:title="Comprendre" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_diagnostic"
+            android:icon="@drawable/ic_find_in_page_black_24dp"
+            android:title="Diagnostiquer" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_soigner"
+            android:icon="@drawable/ic_healing_black_24dp"
+            android:title="Se Soigner" />
     </group>
 
     <item android:title="Communicate">

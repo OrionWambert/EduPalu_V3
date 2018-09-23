@@ -53,7 +53,7 @@ Le paludisme est une maladie qui se trouve surtout dans les pays tropicaux, où 
 <b><u>Au Congo</u></b>:
 
 Au Congo, le Programme National de Lutte contre le Paludisme (PNLP) relève que le paludisme est le premier motif de consultation dans les centres de santé. En 2015, près de 200 000 congolais ont été touchés par le paludisme, dont 2500 femmes enceintes.</p>"</string>
-       <!--// end of title and texts-->
+    <!--// end of title and texts-->
 
     <!--title and text of about activity-->
     <string name="about_title">A propos de EduPalu</string>
@@ -63,6 +63,84 @@ Au Congo, le Programme National de Lutte contre le Paludisme (PNLP) relève que 
     <string name="action_about">A propos</string>
     <string name="about_text_1">"<p> Prince YOULOU,Ricken BAZOLO,Christ KIMVIDI,Orion WAMBERT, Alex BANZOUZI, Dassin MOUELET, Neguev MPASSI,Larges MOUANGA, Hyllarion LOULENDO, Noelly NGATOULA, Peter MFOUNDOU, Oriane BAYENDELA, Jodrey LEZA, Samael EVOKO, Dylan OPINA, Cerone AWANA. </p>"</string>
     <string name="about_text_2">"<p>Toutes les images utilisées dans cette application sont des images sous licence Creative Commons ou du domaine public.</p>"</string>
-
     <!--end on title and text of about activity-->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Dignostic title and text-->
+    <string name="diagnostic_title">"Diagnostiquer le paludisme"</string>
+    <string name="diagnostic_title1">"Une ancienne maladie"</string>
+    <string name="diagnostic_title2">"Le diagnostic au microscope"</string>
+    <string name="diagnostic_title3">"Le test de diagnostic rapide"</string>
+    <string name="diagnostic_text">"<p>Il n'est pas possible de savoir si une personne souffre du paludisme simplement en la regardant ou en ne se basant que sur les symptômes tels que la fièvre, des maux de tête ou des maux de ventre.
+
+L’infection avec le parasite responsable du paludisme n’est détectable que par un examen au microscope ou avec des tests de diagnostic rapides. Ce sont les seuls moyens pour diagnostiquer correctement le paludisme. Ces examens sont réalisés dans les centres de santé par un technicien de laboratoire.
+
+Les pertes économiques liées au paludisme sont également considérables. On estime que le paludisme est responsable de 42 % de l'absentéisme professionnel et de 40 % de l'absentéisme scolaire.</p>"</string>
+
+    <string name="diagnostic_text1">"<p>Le diagnostic par microscopie, appelé communément "goutte épaisse", consiste à prélever une goutte de sang. Cette goutte est ensuite étalée sur une lame de microscope, préparée par un technicien puis observée au microscope.Le technicien va alors rechercher la présence du parasite du paludisme dans la goutte de sang. Cette étape est très difficile et demande beaucoup de temps et de concentration. Il faut compter à peu près 1 heure entre le prélèvement sanguin et le diagnostic.
+
+En plus de détecter les parasites, le technicien peut également les compter pour ensuite calculer la densité parasitaire. C'est la quantité de parasites qu'un patient a dans le sang. Plus il est élevé et plus le patient sera malade.</p>"</string>
+
+    <string name="diagnostic_text2">"<p>Pour faire un test de diagnostic rapide (TDR), le technicien doit prélever une goutte de sang. Cette goutte est ensuite déposée sur une bande de papier spécial qui au bout de 15 à 20 min indiquera la présence ou non du parasite. Le TDR est très rapide mais il ne permet pas de connaître le nombre de parasites présents dans le sang.
+
+Vous pouvez trouver des tests de diagnostic rapide en pharmacie et faire le test vous-même à la maison. Par contre, seul un médecin pourra prescrire le bon traitement si vous avez le paludisme. Alors allez le voir sans tarder avec votre test.</p>"</string>
+    <string name="diagnostic_text3">"Deux tests de diagnostic rapides. Celui de gauche indique que le patient n\'est pas infecté par le parasite. Celui de droite indique que le patient est infecté par le parasite et est donc atteint du paludisme. Il existe d\'autres modèles de tests avec des formes ou des couleurs légèrement différentes. Lisez bien la notice avant de l\'utiliser."</string>
+    <!--end of Dignostic title and text-->
+
+    <!--soigner et title an text-->
+    <string name="soigner_title">\"Soigner le paludisme\"</string>
+    <string name="soigner_text_1">"<p><b><u>La chloroquine </u></b>:
+
+La chloroquine a été longtemps un médicament efficace et pas cher. Malheureusement, depuis les années 80, il n’est plus efficace dans de nombreux pays. Le parasite du paludisme a évolué génétiquement pour résister à ce médicament qui n'est alors plus efficace. On dit que le parasite du paludisme est devenu résistant à la chloroquine. Cette résistance des parasites est aussi apparue pour de nombreux autres médicaments ces dernières années.</p>
+
+            <big><i> <b>\"Le médicament qui soigne le paludisme est un antipaludique.\"</b></i></big>
+    </string>
+    <string name="soigner_text_2">"<p>Les larves de moustiques se développent dans de l'eau stagnante. </p>"</string>
+    <!--end soigner et title an text-->
+    <string name="soigner_text_3">"<p><b><u>L'artemisia</u></b>:
+
+Actuellement, une combinaison de médicaments basée sur un extrait de la plante Artemisia annua, est recommandée pour le traitement du paludisme non compliqué. Introduit en 2006 au Congo, ce nouveau médicament a permis de réduire énormément le nombre de décès dus au paludisme.
+
+La plante Artemisia est utilisée depuis très longtemps dans la médecine traditionnelle chinoise pour lutter contre le paludisme. L'industrie pharmaceutique est parvenue à isoler la molécule active à partir des extraits de cette plante. Elle peut même être chimiquement modifiée pour être plus stable et plus efficace. Aujourd'hui, elle est vendue combinée avec un médicament synthétique à action plus lente. Les combinaisons de plusieurs médicaments sont utilisées afin d'éviter que le parasite ne devienne résistant à ce traitement.
+
+La plante Artemisia peut être cultivée dans de nombreux pays tropicaux. Le défi est ensuite de disposer de bons équipements pour extraire le principe actif de la plante.</p>
+
+       <big><i> <b>\"Attention, seul un médecin peut prescrire un antipaludique.\"</b></i></big>
+
+<p><b><u>La quinine</u></b>:
+
+La quinine est utilisée pour le traitement du paludisme grave.
+
+<b><u>Traitement préventif pour les femmes enceintes</u></b>:
+
+L'Organisation Mondiale de la Santé (OMS) recommande aux femmes enceintes la prise d'un traitement préventif contre le paludisme pendant leur grossesse. Il est conseillé qu'elles prennent trois doses de l'antipaludique sulfadoxine-pyriméthamine (SP) pendant les visites prénatales régulières après le premier trimestre de grossesse.
+
+<b><u>Les antipaludiques : pas n'importe où !</u></b>
+
+Lorsqu'un médecin prescrit un traitement contre le paludisme, il est important d'acheter ces médicaments dans une pharmacie car c'est le seul endroit où ces médicaments sont de bonne qualité.
+
+Les vendeurs de médicaments, dans la rue ou au marché, ne peuvent pas garantir la qualité de leurs produits ni assurer que ceux-ci sont conservés dans de bonnes conditions (à l'abri de la chaleur et de l'humidité).
+
+<b><u>Et un vaccin ?</u></b>
+
+<b><u>Un ennemi malin </u></b>
+
+Notre système immunitaire fonctionne en reconnaissant certaines molécules à la surface des bactéries, virus ou parasites. Une fois reconnu, le système immunitaire va tuer l'envahisseur.
+
+Pour éviter d'être reconnu, le parasite du paludisme a mis au point une arme efficace : la variation des protéines qui se trouvent à sa surface et à la surface du globule rouge qu'il a infecté. En utilisant cette stratégie, les parasites du paludisme sont plus ou moins différents. Un seul parasite est aussi capable de changer au cours d'une même infection. Donc, une fois que notre système immunitaire a développé une défense contre un type de parasite du paludisme, après un certain temps le parasite n’est plus reconnu car il aura changé.
+
+Cette compétition entre le parasite et notre corps peut potentiellement être mortelle.
+
+<b><u>Une immunité progressive</u></b>
+
+Si après plusieurs infections, notre système immunitaire reconnaît les diverses formes du parasite, l’humain survit et à la prochaine piqûre de moustique infecté, il aura une meilleure défense. Plus l'individu est infecté par le paludisme, mieux le système immunitaire développe des réponses efficaces contre le parasite du paludisme.
+
+Mais cela prend du temps, environ 5 ans pour le développement de l'immunité contre la maladie. Dans les pays où le paludisme est très présent, cela peut prendre jusqu'à 12 ou 15 ans pour développer l'immunité anti-parasite. Voilà pourquoi les jeunes enfants sont particulièrement sensibles.
+
+<b><u>Le vaccin arrive bientôt</u></b>
+
+Dans très peu de temps, le premier vaccin contre le paludisme sera mis sur le marché mais son efficacité n’est pas encore très grande. Le développement du vaccin va continuer jusqu’à ce que celui-ci soit très efficace et puisse bien protéger la population.</p>
+    </string>
 </resources>

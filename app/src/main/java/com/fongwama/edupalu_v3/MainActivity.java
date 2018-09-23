@@ -14,9 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
+import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
+import com.fongwama.edupalu_v3.fragments.SoignerFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.home) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -106,12 +109,19 @@ public class MainActivity extends AppCompatActivity
             ComprendreFragment comprendreFragment = new ComprendreFragment();
             ft.replace(R.id.main_frame,comprendreFragment);
             ft.commit();
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_diagnostic) {
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            DiagnosticFragment diagnosticFragment = new DiagnosticFragment();
+            ft.replace(R.id.main_frame,diagnosticFragment);
+            ft.commit();
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_soigner) {
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            SoignerFragment soignerFragment = new SoignerFragment();
+            ft.replace(R.id.main_frame,soignerFragment);
+            ft.commit();
         } else if (id == R.id.nav_send) {
 
         }

@@ -10,4 +10,5 @@
     <!--default text color-->
     <color name="color_default_text">#3e3e3e</color>
     <color name="bg_white">#fff</color>
+    <color name="cardview_text_color">#78000000</color>
 </resources>
