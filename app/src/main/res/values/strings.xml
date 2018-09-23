@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">EduPalu_V3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--titles and text comprendre-->
+    <string name="comprendre_title">"C'est Quoi le paludisme ?"</string>
+    <string name="comprendre_title1">"Comment devient-on malade ?"</string>
+    <string name="comprendre_title2">Où trouve-t-on le paludisme ?</string>
+
+    <string name="comprendre_text">"<p><b><u>Une ancienne maladie</u></b>:
+
+Le paludisme est l’une des plus anciennes maladies. Elle existait même au temps des pharaons. Dans les pays anglophones, le paludisme s'appelle malaria. Malaria est un mot italien qui veut dire « mauvais air » car les premiers cas de paludisme ont été trouvés à côté de marais.
+</p>
+<p><b><u>Qui concerne plus de 200 millions de personnes</u></b>:
+
+En 2015, 214 millions de personnes ont été atteintes du paludisme dans le monde entier, et 438 000 personnes en sont mortes. L'Afrique subsaharienne est particulièrement touchée par cette épidémie puisque 9 décès sur 10 dus au paludisme se trouvent dans cette région du monde.
+
+Les jeunes enfants et les femmes enceintes sont les plus fragiles. Toutes les deux minutes, un enfant meurt du paludisme en Afrique subsaharienne.
+
+Les pertes économiques liées au paludisme sont également considérables. On estime que le paludisme est responsable de 42 % de l'absentéisme professionnel et de 40 % de l'absentéisme scolaire.</p>
+<p>
+<b><u>Avec un parasite</u></b>:
+
+Le paludisme est une maladie due à un parasite. Ce parasite va se développer et se multiplier dans le corps humain en particulier dans les globules rouges du sang jusqu'à parfois entraîner la mort. Il est donc important de bien connaître ce parasite pour mieux s'en protéger et mieux se soigner quand on est malade.</p>
+<p>
+<b><u>Plusieurs parasites différents</u></b>:
+
+Le parasite responsable du paludisme s'appelle Plasmodium. Il est très petit et on ne peut le voir qu'avec un microscope. En fait, il existe plusieurs types (ou espèces) de ce parasite. Il n'y a que cinq types qui provoquent la maladie chez les êtes humains : <u><i> Plasmodium falciparum, Plasmodium vivax, Plasmodium ovale, Plasmodium malariae et Plasmodium knowlesi</i></u>. Tous ces noms un peu compliqués correspondent à des types de paludismes différents, qu'on trouve dans des endroits différents du monde (en Asie, en Afrique et aussi en Amérique du Sud) et qu'on soigne parfois différemment.
+<br />
+Au Congo, c'est surtout le parasite Plasmodium falciparum qui est responsable du paludisme"</p>
+    </string>
+    <string name="comprendre_text_1">"<p><b><u>Le moustique anophèle </u></b>:
+Le paludisme s\'attrape par une piqûre de moustique, mais pas n\'importe quel moustique, seulement les femelles de l\'espèce Anophèle. En effet, la femelle moustique anophèle pique pour nourrir ses oeufs avec le sang humain.</p>
+<p><b><u>D\'abord dans le foie </u></b>:
+
+Quand ces moustiques piquent, des parasites présents dans la salive du moustique passent très rapidement dans le sang pour aller s’installer d’abord dans le foie de la personne piquée. Lorsque le parasite se trouve dans le foie, l\'individu n\'a pas de symptôme de la maladie et ne se rend compte de rien. Habituellement, les symptômes du paludisme causés par le parasite Plasmodium falciparum (celui qu\'on trouve au Congo) apparaissent 6 à 14 jours après l\'infection lorsque les parasites quittent le foie pour aller dans le sang.</p>
+
+<p><b><u>Puis dans le sang </u></b>:
+
+Dans le sang, les parasites vont envahir les globules rouges. Cela provoque l\'apparition des symptômes de l\'infection du paludisme : fièvre, anémie, vomissements, frissons, douleurs au niveau des articulations et parfois des convulsions. La plupart du temps, les symptômes commencent avec des frissons qui sont suivis par de la fièvre pendant 4 à 6 heures. Quand les premiers globules rouges détruits par les parasites sont éliminés du sang et que les parasites envahissent de nouveaux globules rouges, la fièvre diminue visiblement. Ce sont les cycles bien connus de la fièvre qui caractérisent le paludisme. Si le paludisme n’est pas traité, ce processus va progressivement entraîner le coma et la mort surtout chez les enfants de moins de 5 ans et les femmes enceintes.</p>"
+    </string>
+    <string name="comprendre_text_2">"<p>Voici une photo du parasite observé au microscope. Le parasite est au centre de l\'image. Il a une forme très allongée. Il a été coloré en violet pour qu\'on puisse mieux le voir sur la photo mais en réalité, il n\'a pas de couleur.</p>"</string>
+    <string name="comprendre_text_3">"<p>Moustique en train de piquer. C\'est à cet instant que la femelle anophèle peut transmettre le parasite.</p>"</string>
+    <string name="comprendre_text_4">"<p><b><u>Dans les pays tropicaux </u></b>:
+
+Le paludisme est une maladie qui se trouve surtout dans les pays tropicaux, où le climat chaud et humide permet aux moustiques de bien se développer.
+
+<b><u>Au Congo</u></b>:
+
+Au Congo, le Programme National de Lutte contre le Paludisme (PNLP) relève que le paludisme est le premier motif de consultation dans les centres de santé. En 2015, près de 200 000 congolais ont été touchés par le paludisme, dont 2500 femmes enceintes.</p>"</string>
+    <!--// end of title and texts-->
+
+    <!--title and text of about activity-->
+
+    <!--end on title and text of about activity-->
+</resources>
