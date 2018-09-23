@@ -53,9 +53,16 @@ Le paludisme est une maladie qui se trouve surtout dans les pays tropicaux, où 
 <b><u>Au Congo</u></b>:
 
 Au Congo, le Programme National de Lutte contre le Paludisme (PNLP) relève que le paludisme est le premier motif de consultation dans les centres de santé. En 2015, près de 200 000 congolais ont été touchés par le paludisme, dont 2500 femmes enceintes.</p>"</string>
-    <!--// end of title and texts-->
+       <!--// end of title and texts-->
 
     <!--title and text of about activity-->
+    <string name="about_title">A propos de EduPalu</string>
+    <string name="about_text">"<p>EduPalu est une application d\'information et d\'éducation sur le paludisme au Congo.</p>"
+
+<p>Développement : <b>Fongwama</b>, la communauté congolaise de développement libre.</p>"</string>
+    <string name="action_about">A propos</string>
+    <string name="about_text_1">"<p> Prince YOULOU,Ricken BAZOLO,Christ KIMVIDI,Orion WAMBERT, Alex BANZOUZI, Dassin MOUELET, Neguev MPASSI,Larges MOUANGA, Hyllarion LOULENDO, Noelly NGATOULA, Peter MFOUNDOU, Oriane BAYENDELA, Jodrey LEZA, Samael EVOKO, Dylan OPINA, Cerone AWANA. </p>"</string>
+    <string name="about_text_2">"<p>Toutes les images utilisées dans cette application sont des images sous licence Creative Commons ou du domaine public.</p>"</string>
 
     <!--end on title and text of about activity-->
 </resources>
