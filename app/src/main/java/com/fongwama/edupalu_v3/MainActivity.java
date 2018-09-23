@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
 import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
+import com.fongwama.edupalu_v3.fragments.ProtegerFragment;
+import com.fongwama.edupalu_v3.fragments.QuestionReponseFragment;
 import com.fongwama.edupalu_v3.fragments.SoignerFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -36,15 +38,6 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.main_frame,mainFragment);
         ft.commit();
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -101,13 +94,19 @@ public class MainActivity extends AppCompatActivity
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             MainFragment mainFragment = new MainFragment();
-            ft.replace(R.id.main_frame,mainFragment);
+            ft.replace(R.id.main_frame, mainFragment);
             ft.commit();
-        } else if (id == R.id.nav_comprendre) {
+        }else if (id == R.id.nav_comprendre) {
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ComprendreFragment comprendreFragment = new ComprendreFragment();
             ft.replace(R.id.main_frame,comprendreFragment);
+            ft.commit();
+        }else if (id == R.id.nav_proteger){
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ProtegerFragment protegerFragment = new ProtegerFragment();
+            ft.replace(R.id.main_frame,protegerFragment);
             ft.commit();
         } else if (id == R.id.nav_diagnostic) {
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
@@ -115,15 +114,18 @@ public class MainActivity extends AppCompatActivity
             DiagnosticFragment diagnosticFragment = new DiagnosticFragment();
             ft.replace(R.id.main_frame,diagnosticFragment);
             ft.commit();
-
         } else if (id == R.id.nav_soigner) {
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             SoignerFragment soignerFragment = new SoignerFragment();
             ft.replace(R.id.main_frame,soignerFragment);
             ft.commit();
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_questions) {
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            QuestionReponseFragment questionReponseFragment = new QuestionReponseFragment();
+            ft.replace(R.id.main_frame,questionReponseFragment);
+            ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

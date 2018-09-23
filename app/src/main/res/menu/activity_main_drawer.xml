@@ -10,8 +10,12 @@
             android:title="Accueil" />
         <item
             android:id="@+id/nav_comprendre"
-            android:icon="@drawable/ic_comprendre_24dp"
+            android:icon="@drawable/ic_description_black_24dp"
             android:title="Comprendre" />
+        <item
+            android:id="@+id/nav_proteger"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="Se proteger" />
         <item
             android:id="@+id/nav_diagnostic"
             android:icon="@drawable/ic_find_in_page_black_24dp"
@@ -20,19 +24,10 @@
             android:id="@+id/nav_soigner"
             android:icon="@drawable/ic_healing_black_24dp"
             android:title="Se Soigner" />
+
+        <item
+            android:id="@+id/nav_questions"
+            android:icon="@drawable/ic_forum_black_24dp"
+            android:title="Questions / Réponses" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
-
 </menu>

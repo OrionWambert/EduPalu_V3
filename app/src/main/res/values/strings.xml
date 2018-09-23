@@ -90,15 +90,15 @@ Vous pouvez trouver des tests de diagnostic rapide en pharmacie et faire le test
     <!--end of Dignostic title and text-->
 
     <!--soigner et title an text-->
-    <string name="soigner_title">\"Soigner le paludisme\"</string>
-    <string name="soigner_text_1">"<p><b><u>La chloroquine </u></b>:
+    <string name="soigner_title">"Soigner le paludisme"</string>
+    <string name="soigner_text_1">"<p><b><u>La chloroquine:</u></b>
 
 La chloroquine a été longtemps un médicament efficace et pas cher. Malheureusement, depuis les années 80, il n’est plus efficace dans de nombreux pays. Le parasite du paludisme a évolué génétiquement pour résister à ce médicament qui n'est alors plus efficace. On dit que le parasite du paludisme est devenu résistant à la chloroquine. Cette résistance des parasites est aussi apparue pour de nombreux autres médicaments ces dernières années.</p>
 
             <big><i> <b>\"Le médicament qui soigne le paludisme est un antipaludique.\"</b></i></big>
     </string>
     <string name="soigner_text_2">"<p>Les larves de moustiques se développent dans de l'eau stagnante. </p>"</string>
-    <!--end soigner et title an text-->
+
     <string name="soigner_text_3">"<p><b><u>L'artemisia</u></b>:
 
 Actuellement, une combinaison de médicaments basée sur un extrait de la plante Artemisia annua, est recommandée pour le traitement du paludisme non compliqué. Introduit en 2006 au Congo, ce nouveau médicament a permis de réduire énormément le nombre de décès dus au paludisme.
@@ -143,4 +143,68 @@ Mais cela prend du temps, environ 5 ans pour le développement de l'immunité co
 
 Dans très peu de temps, le premier vaccin contre le paludisme sera mis sur le marché mais son efficacité n’est pas encore très grande. Le développement du vaccin va continuer jusqu’à ce que celui-ci soit très efficace et puisse bien protéger la population.</p>
     </string>
+<!--end soigner et title an text-->
+
+<!--ext and titles of question/reponses-->
+    <string name="question_title">"Questions / réponses"</string>
+    <string name="question_text">"<i>Voici une série de questions et de réponses autour du paludisme.</i>
+
+<big><b>Qu’est-ce que le paludisme ?</b></big>
+Le paludisme est une maladie due à des parasites.
+
+<big><b>Comment contracte-t-on le paludisme ?</b></big>
+On contracte le paludisme par piqûre d’un moustique infecté qui transmet dans le corps les parasites responsables de cette maladie.
+
+<big><b>Comment appelle-t-on les parasites responsables du paludisme chez les humains ?</b></big>
+Les parasites responsables du paludisme chez les humains sont appelés Plasmodium et il en existe cinq espèces qui sont : Plasmodium falciparum, Plasmodium malariae, Plasmodium ovale, Plasmodium vivax et Plasmodium knowlesie. Au Congo, c\'est surtout le parasite Plasmodium falciparum qui est présent.
+
+<big><b>Est-ce que tous les moustiques transmettent le paludisme ?</b></big>
+Non. Seulement certaines espèces appelées anophèles et, chez ces espèces, seulement les femelles.
+
+<big><b>Pourquoi les moustiques anophèles femelles piquent les gens ? </b></big>
+Les anophèles femelles piquent les gens pour se nourrir du sang qui permet le développement de leurs oeufs.
+
+<big><b>Le moustique peut-il transmettre le Sida ?</b></big>
+Non, le moustique ne peut pas transmettre cette maladie.
+
+<big><b>Quels sont les symptômes possibles du paludisme ?</b></big>
+Les symptômes du paludisme sont : la fièvre, les frissons, les douleurs articulaires et musculaires, les maux de tête et la fatigue. Mais attention, seul un médecin peut correctement diagnostiquer le paludisme, après avoir pris connaissance des résultats de l\'examen de la goutte épaisse ou du test de diagnostic rapide."</string>
+     <!--/end text and titles of question/reponses-->
+
+    <!--text and titles of se_proteger-->
+    <string name="proteger_text_2">"Les larves de moustiques se développent dans de l\'eau stagnante."</string>
+    <string name="proteger_text_3">\"Les larves de moustiques se développent dans de l\'eau stagnante. \"</string>
+    <string name="proteger_text_4">\"Les larves de moustiques se développent dans de l\'eau stagnante. \"</string>
+    <string name="proteger_text_5">"<b><u>Les larvicides </u></b>:
+
+Les larvicides sont des substances chimiques ou biologiques qui peuvent être utilisées pour tuer les larves de moustiques. Ils sont souvent utilisés dans les zones marécageuses afin de freiner le développement des moustiques. Cette technique est compliquée car les larvicides doivent être sélectifs, c\'est-à-dire qu\'ils doivent bien détruire les larves de moustiques mais ne doivent pas avoir d\'effet sur les larves des autres insectes et des petits crustacés aquatiques par exemple. De plus, les larves de moustiques peuvent s\'adapter aux produits utilisés et développer des mécanismes de résistances. Les scientifiques surveillent donc très régulièrement leur efficacité et continuent de chercher des produits plus efficaces."</string>
+
+<string name="proteger_text_6">"<b><u>Les moustiquaires imprégnées  </u></b>:
+
+Les moustiquaires imprégnées d’insecticide sont un grand progrès. Les moustiquaires empêchent que les personnes puissent être piquées lorsqu\'elles dorment."</string>
+
+    <string name="proteger_text_7">"<b><u>La lutte chimique  </u></b>:
+
+Dans les pays où les moustiques piquent et se reposent à l\'intérieur des maisons, la pulvérisation des maisons peut être efficace. Le produit chimique DDT a été utilisé en grande échelle en Asie, en Amérique latine et en Afrique, mais les moustiques ont réussi à s\'en protéger en Asie et dans certaines régions d\'Afrique.  Aujourd\'hui, des produits comme les pyréthroïdes, la perméthrine, la deltaméthrine, la lamdacyhalothrin... sont souvent utilisés. Ils sont faiblement toxiques pour les humains mais très toxiques pour les moustiques et ils ne sentent pas mauvais."</string>
+    <string name="proteger_text_8">"En Asie et en Amérique latine, de nombreuses espèces d’anophèles vivent dans les forêts, se reproduisent dans l\'ombre et piquent à l\'extérieur uniquement. D\'autres espèces, par contre, ont un mode de vie qui ressemble aux espèces africaines. La lutte contre les moustiques (on parle de lutte anti-vectorielle) ne peut donc pas être la même partout dans le monde.
+
+<b><u>D\'abord prévenir</u></b> :
+
+La prévention est toujours la meilleure approche. Le contrôle du paludisme a été réussi en Europe et aux États-Unis en asséchant les sites de reproduction des moustiques et en ayant des protections pour éviter l’entrée des moustiques dans les maisons. La lutte chimique n\'a joué qu\'un rôle mineur. Ces méthodes sont efficaces lorsque les sites de reproduction des moustiques sont bien définis, que la société est bien organisée et a des ressources financières suffisantes."</string>
+    <string name="proteger_title">"Lutter contre les moustiques"</string>
+    <string name="proteger_text_9">"<b><u>Les anophèles  </u></b>:
+
+Sans moustiques, pas de propagation du paludisme. Et les moustiques pourraient aussi dire la même chose pour les humains.
+
+Chez l\'Homme, le paludisme est seulement transmis par des moustiques appartenant à un genre appelé Anophèles et c’est la femelle qui transmet le parasite. En vol, ils font très peu de bruit par rapport aux autres moustiques qui nous attaquent. Les espèces d\'anophèles vivent de manières différentes suivant les pays.
+
+<big><i> <b>"On dit que le moustique Anophèle est le vecteur du paludisme car il transmet cette maladie."</b></i></big>
+
+
+<b><u>Des modes de vie différents </u></b>:
+
+En Afrique, les espèces les plus importantes se reproduisent à partir de larves qui se développent dans de l\'eau stagnante. Les adultes se reposent dans nos maisons et piquent aussi à l\'intérieur des maisons."</string>
+
+
+    <!--end text and titles of se_proteger-->
 </resources>
