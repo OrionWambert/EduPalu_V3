@@ -61,7 +61,7 @@ Au Congo, le Programme National de Lutte contre le Paludisme (PNLP) relève que 
 
 <p>Développement : <b>Fongwama</b>, la communauté congolaise de développement libre.</p>"</string>
     <string name="action_about">A propos</string>
-    <string name="about_text_1">"<p> Prince YOULOU,Ricken BAZOLO,Christ KIMVIDI,Orion WAMBERT, Alex BANZOUZI, Dassin MOUELET, Neguev MPASSI,Larges MOUANGA, Hyllarion LOULENDO, Noelly NGATOULA, Peter MFOUNDOU, Oriane BAYENDELA, Jodrey LEZA, Samael EVOKO, Dylan OPINA, Cerone AWANA. </p>"</string>
+    <string name="about_text_1">"<p>Prince YOULOU,Ricken BAZOLO,Christ KIMVIDI,Orion WAMBERT, Alex BANZOUZI, Dassin MOUELET, Neguev MPASSI,Larges MOUANGA, Hyllarion LOULENDO, Noelly NGATOULA, Peter MFOUNDOU, Oriane BAYENDELA, Jodrey LEZA, Samael EVOKO, Dylan OPINA, Cerone AWANA. </p>"</string>
     <string name="about_text_2">"<p>Toutes les images utilisées dans cette application sont des images sous licence Creative Commons ou du domaine public.</p>"</string>
     <!--end on title and text of about activity-->
 
@@ -205,6 +205,16 @@ Chez l\'Homme, le paludisme est seulement transmis par des moustiques appartenan
 
 En Afrique, les espèces les plus importantes se reproduisent à partir de larves qui se développent dans de l\'eau stagnante. Les adultes se reposent dans nos maisons et piquent aussi à l\'intérieur des maisons."</string>
 
+    <!--label main fragment cardview imagebutton-->
+        <string name="comprendre_label">comprendre</string>
+        <string name="diagnostic_label">Diagnostiquer</string>
+        <string name="proteger_label">Se protéger</string>
+        <string name="soigner_label">Se soigner</string>
+        <string name="rechercher_label">Rechercher</string>
+        <string name="questions_reponses_label">Questions / Réponses</string>
+        <string name="quiz_label">Jouer : Le quiz</string>
+        <string name="chasse_parasites_label">Jouer : Chasse aux parasites</string>
+    <!-- end label main fragment cardview imagebutton-->
 
     <!--end text and titles of se_proteger-->
 </resources>

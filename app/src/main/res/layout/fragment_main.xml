@@ -20,71 +20,48 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_moustique"
-                    android:scaleType="center"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_moustique"
+                        android:scaleType="center"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/comprendre_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:layout_width="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_moustiquaire"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <android.support.v7.widget.CardView
-                android:layout_width="0dp"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_tdr"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="0dp"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_drug"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <android.support.v7.widget.CardView
-                android:layout_width="0dp"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_docteur"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="0dp"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_questions"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_moustiquaire"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/proteger_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
         <LinearLayout
@@ -96,20 +73,151 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_quiz"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_tdr"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/diagnostic_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:layout_width="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content">
-                <ImageButton
-                    android:src="@drawable/menu_technicien"
-                    android:layout_height="150dp"
-                    android:layout_width="match_parent" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_drug"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/soigner_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_docteur"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/rechercher_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_questions"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/questions_reponses_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_quiz"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/quiz_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/menu_technicien"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent" />
+                    <TextView
+                        android:text="@string/chasse_parasites_label"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@color/txt_label_bg"
+                        android:textColor="@color/bg_white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
