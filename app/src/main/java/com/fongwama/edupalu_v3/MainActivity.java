@@ -2,9 +2,13 @@ package com.fongwama.edupalu_v3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +18,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
@@ -23,9 +30,11 @@ import com.fongwama.edupalu_v3.fragments.ProtegerFragment;
 import com.fongwama.edupalu_v3.fragments.QuestionReponseFragment;
 import com.fongwama.edupalu_v3.fragments.SoignerFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    SearchView searchViewQuery;
+    ImageButton imageViewSearchMenu;
+    CoordinatorLayout cordinatorLayoutActivityA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +47,19 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.main_frame,mainFragment);
         ft.commit();
 
+        searchViewQuery = (SearchView)findViewById(R.id.searchViewQuery);
+        imageViewSearchMenu = (ImageButton) findViewById(R.id.imageViewSearchMenu);
 
+        EditText searchEditText = (EditText) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        searchEditText.setTextColor(ResourcesCompat.getColor(getResources(),R.color.colortitle,null));
+        searchEditText.setHintTextColor(ResourcesCompat.getColor(getResources(),R.color.txt_hint_text,null));
+
+        ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
+        searchImage.setVisibility(View.GONE);
+        popUpShowNearToMe();
+
+
+        //DrawerLayout initialization
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -131,5 +152,14 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void popUpShowNearToMe(){
+        imageViewSearchMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Looking for the near drugStore", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

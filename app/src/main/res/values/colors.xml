@@ -12,4 +12,5 @@
     <color name="bg_white">#fff</color>
     <color name="cardview_text_color">#78000000</color>
     <color name="txt_label_bg">#97000000</color>
+    <color name="txt_hint_text">#696868</color>
 </resources>

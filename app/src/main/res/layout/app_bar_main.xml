@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -18,6 +17,38 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+        <android.support.v7.widget.CardView
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            android:id="@+id/cardS"
+            app:cardBackgroundColor="@color/bg_white"
+            app:cardElevation="5dp">
+            <android.support.v7.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/searchViewQuery"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:queryHint="Trouver une Pharmacie"
+                android:textColor="@color/color_default_text"
+                app:iconifiedByDefault="false"
+                app:searchIcon="@drawable/ic_search"
+                app:closeIcon="@drawable/ic_close"
+                android:layout_marginRight="20dp" />
+            <ImageButton
+                android:layout_marginRight="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end|center_vertical"
+                android:id="@+id/imageViewSearchMenu"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:src="@drawable/ic_place_black_24dp"/>
+
+        </android.support.v7.widget.CardView>
 
     </android.support.design.widget.AppBarLayout>
 

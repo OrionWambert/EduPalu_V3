@@ -17,10 +17,10 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:src="@drawable/menu_technicien"
             android:layout_width="match_parent"
+            android:layout_height="340dp"
             android:scaleType="fitXY"
-            android:layout_height="340dp" />
+            android:src="@drawable/menu_technicien" />
         <TextView
             android:text="@string/diagnostic_title1"
             android:theme="@style/style_title"
