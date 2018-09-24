@@ -65,8 +65,6 @@ Au Congo, le Programme National de Lutte contre le Paludisme (PNLP) relève que 
     <string name="about_text_2">"<p>Toutes les images utilisées dans cette application sont des images sous licence Creative Commons ou du domaine public.</p>"</string>
     <!--end on title and text of about activity-->
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--Dignostic title and text-->
     <string name="diagnostic_title">"Diagnostiquer le paludisme"</string>

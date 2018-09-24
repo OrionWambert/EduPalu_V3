@@ -24,6 +24,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
+                        android:id="@+id/nav_comprendre"
                         android:src="@drawable/menu_moustique"
                         android:scaleType="center"
                         android:layout_height="150dp"
@@ -49,6 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
+                        android:id="@+id/nav_proteger"
                         android:src="@drawable/menu_moustiquaire"
                         android:layout_height="150dp"
                         android:layout_width="match_parent" />
@@ -77,6 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
+                        android:id="@+id/nav_diagnostic"
                         android:src="@drawable/menu_tdr"
                         android:layout_height="150dp"
                         android:layout_width="match_parent" />
@@ -100,6 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
+                        android:id="@+id/nav_soigner"
                         android:src="@drawable/menu_drug"
                         android:layout_height="150dp"
                         android:layout_width="match_parent" />
@@ -152,6 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
+                        android:id="@+id/nav_questions"
                         android:src="@drawable/menu_questions"
                         android:layout_height="150dp"
                         android:layout_width="match_parent" />
