@@ -83,13 +83,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
         protected FilterResults performFiltering(CharSequence constraint) {
             List<PlaceModel> filteredList = new ArrayList<PlaceModel>();
 
-            if (constraint == null || constraint.length() == 0) {
-                filteredList.addAll(data);
+            if (constraint == null || constraint.length() == 0 || constraint.toString().equals("")) {
+                filteredList.clear();
+                filteredList.removeAll(filteredList);
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (PlaceModel placeItem : data) {
                     if (placeItem.getName().toLowerCase().contains(filterPattern)) {
+                       filteredList.add(placeItem);
+
+                    }else if (placeItem.getAddress().toLowerCase().contains(filterPattern)){
                         filteredList.add(placeItem);
                     }
                 }

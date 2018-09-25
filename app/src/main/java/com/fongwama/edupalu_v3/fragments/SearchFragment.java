@@ -2,6 +2,7 @@ package com.fongwama.edupalu_v3.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -75,43 +76,35 @@ public class SearchFragment extends Fragment {
         searchViewQuery.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                tv_search1.setVisibility(View.INVISIBLE);
-                tv_search2.setVisibility(View.VISIBLE);
-                recyclerView.setVisibility(View.VISIBLE);
-
-                if(query.length()>0){
-                    listAdapter.getFilter().filter(query);
-                }else{
-                    listAdapter.getFilter().filter("");
-                }
-
 
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                tv_search1.setVisibility(View.INVISIBLE);
+                tv_search1.setVisibility(View.GONE);
                 tv_search2.setVisibility(View.VISIBLE);
                 recyclerView.setVisibility(View.VISIBLE);
-
-                if(newText.length()>0){
-                    listAdapter.getFilter().filter(newText);
-                }else{
-                    listAdapter.getFilter().filter("");
-                }
-
-               //listAdapter.getFilter().filter(newText);
+                listAdapter.getFilter().filter(newText);
                 return true;
             }
         });
 
-//        //SearchBar
-//        EditText searchEditText = (EditText) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-//        searchEditText.setTextColor(ResourcesCompat.getColor(getResources(),R.color.colortitle,null));
-//        searchEditText.setHintTextColor(ResourcesCompat.getColor(getResources(),R.color.txt_hint_text,null));
-
-         //Toast.makeText(getContext(), "Résultat de votre recherche "+searchEditText.getText().toString(), Toast.LENGTH_SHORT).show();
+        searchViewQuery.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "topti", Toast.LENGTH_SHORT).show();
+            }
+        });
+        searchViewQuery.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                tv_search1.setVisibility(View.VISIBLE);
+                tv_search2.setVisibility(View.GONE);
+                recyclerView.clearFocus();
+                return false;
+            }
+        });
 
         ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
         searchImage.setVisibility(View.GONE);
@@ -169,5 +162,7 @@ public class SearchFragment extends Fragment {
             }
         });
     }
+
+
 
 }
