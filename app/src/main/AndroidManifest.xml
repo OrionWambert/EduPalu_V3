@@ -20,7 +20,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:parentActivityName=".MainActivity"  android:name=".AboutActivity"/>
+            android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.fongwama.edupalu_v3;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -8,7 +9,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,22 +22,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.fongwama.edupalu_v3.adapters.ListAdapter;
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
 import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
 import com.fongwama.edupalu_v3.fragments.ProtegerFragment;
 import com.fongwama.edupalu_v3.fragments.QuestionReponseFragment;
 import com.fongwama.edupalu_v3.fragments.SoignerFragment;
+import com.fongwama.edupalu_v3.model.PlaceModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    SearchView searchViewQuery;
-    ImageButton imageViewSearchMenu;
+
     CoordinatorLayout cordinatorLayoutActivityA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +59,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         MainFragment mainFragment = new MainFragment();
         ft.replace(R.id.main_frame,mainFragment);
         ft.commit();
-
-        searchViewQuery = (SearchView)findViewById(R.id.searchViewQuery);
-        imageViewSearchMenu = (ImageButton) findViewById(R.id.imageViewSearchMenu);
-
-        EditText searchEditText = (EditText) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        searchEditText.setTextColor(ResourcesCompat.getColor(getResources(),R.color.colortitle,null));
-        searchEditText.setHintTextColor(ResourcesCompat.getColor(getResources(),R.color.txt_hint_text,null));
-
-        ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
-        searchImage.setVisibility(View.GONE);
-        popUpShowNearToMe();
 
 
         //DrawerLayout initialization
@@ -69,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -99,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent i = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(i);
             return true;
+        }else if(id == R.id.action_search){
+            Intent i = new Intent(this, SearchActivity.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
@@ -154,12 +166,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void popUpShowNearToMe(){
-        imageViewSearchMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Looking for the near drugStore", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }

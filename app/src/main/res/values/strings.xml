@@ -141,9 +141,9 @@ Mais cela prend du temps, environ 5 ans pour le développement de l'immunité co
 
 Dans très peu de temps, le premier vaccin contre le paludisme sera mis sur le marché mais son efficacité n’est pas encore très grande. Le développement du vaccin va continuer jusqu’à ce que celui-ci soit très efficace et puisse bien protéger la population.</p>
     </string>
-<!--end soigner et title an text-->
+    <!--end soigner et title an text-->
 
-<!--ext and titles of question/reponses-->
+    <!--ext and titles of question/reponses-->
     <string name="question_title">"Questions / réponses"</string>
     <string name="question_text">"<i>Voici une série de questions et de réponses autour du paludisme.</i>
 
@@ -167,7 +167,7 @@ Non, le moustique ne peut pas transmettre cette maladie.
 
 <big><b>Quels sont les symptômes possibles du paludisme ?</b></big>
 Les symptômes du paludisme sont : la fièvre, les frissons, les douleurs articulaires et musculaires, les maux de tête et la fatigue. Mais attention, seul un médecin peut correctement diagnostiquer le paludisme, après avoir pris connaissance des résultats de l\'examen de la goutte épaisse ou du test de diagnostic rapide."</string>
-     <!--/end text and titles of question/reponses-->
+    <!--/end text and titles of question/reponses-->
 
     <!--text and titles of se_proteger-->
     <string name="proteger_text_2">"Les larves de moustiques se développent dans de l\'eau stagnante."</string>
@@ -177,7 +177,7 @@ Les symptômes du paludisme sont : la fièvre, les frissons, les douleurs articu
 
 Les larvicides sont des substances chimiques ou biologiques qui peuvent être utilisées pour tuer les larves de moustiques. Ils sont souvent utilisés dans les zones marécageuses afin de freiner le développement des moustiques. Cette technique est compliquée car les larvicides doivent être sélectifs, c\'est-à-dire qu\'ils doivent bien détruire les larves de moustiques mais ne doivent pas avoir d\'effet sur les larves des autres insectes et des petits crustacés aquatiques par exemple. De plus, les larves de moustiques peuvent s\'adapter aux produits utilisés et développer des mécanismes de résistances. Les scientifiques surveillent donc très régulièrement leur efficacité et continuent de chercher des produits plus efficaces."</string>
 
-<string name="proteger_text_6">"<b><u>Les moustiquaires imprégnées  </u></b>:
+    <string name="proteger_text_6">"<b><u>Les moustiquaires imprégnées  </u></b>:
 
 Les moustiquaires imprégnées d’insecticide sont un grand progrès. Les moustiquaires empêchent que les personnes puissent être piquées lorsqu\'elles dorment."</string>
 
@@ -204,14 +204,15 @@ Chez l\'Homme, le paludisme est seulement transmis par des moustiques appartenan
 En Afrique, les espèces les plus importantes se reproduisent à partir de larves qui se développent dans de l\'eau stagnante. Les adultes se reposent dans nos maisons et piquent aussi à l\'intérieur des maisons."</string>
 
     <!--label main fragment cardview imagebutton-->
-        <string name="comprendre_label">comprendre</string>
-        <string name="diagnostic_label">Diagnostiquer</string>
-        <string name="proteger_label">Se protéger</string>
-        <string name="soigner_label">Se soigner</string>
-        <string name="rechercher_label">Rechercher</string>
-        <string name="questions_reponses_label">Questions / Réponses</string>
-        <string name="quiz_label">Jouer : Le quiz</string>
-        <string name="chasse_parasites_label">Jouer : Chasse aux parasites</string>
+    <string name="comprendre_label">comprendre</string>
+    <string name="diagnostic_label">Diagnostiquer</string>
+    <string name="proteger_label">Se protéger</string>
+    <string name="soigner_label">Se soigner</string>
+    <string name="rechercher_label">Rechercher</string>
+    <string name="questions_reponses_label">Questions / Réponses</string>
+    <string name="quiz_label">Jouer : Le quiz</string>
+    <string name="chasse_parasites_label">Jouer : Chasse aux parasites</string>
+    <string name="title_activity_search">SearchActivity</string>
     <!-- end label main fragment cardview imagebutton-->
 
     <!--end text and titles of se_proteger-->
