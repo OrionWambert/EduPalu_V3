@@ -37,19 +37,30 @@
             android:layout_gravity="end|center_vertical"
             android:id="@+id/imageViewSearchMenu"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:src="@drawable/ic_place_black_24dp"/>
+            android:src="@drawable/ic_my_location"/>
 
     </android.support.v7.widget.CardView>
 
     <TextView
+        android:id="@+id/tv_search1"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Aucun resultat à afficher"/>
+
+    <TextView
+        android:id="@+id/tv_search2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:padding="10dp"
         android:text="Résultats de la recherche :"
         android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
+        android:visibility="gone"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

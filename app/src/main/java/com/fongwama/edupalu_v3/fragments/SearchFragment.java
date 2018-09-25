@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fongwama.edupalu_v3.R;
@@ -36,8 +37,9 @@ public class SearchFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<PlaceModel>listPlaces;
+    ListAdapter listAdapter;
 
-
+    TextView tv_search1,tv_search2;
     public SearchFragment() {
         // Required empty public constructor
     }
@@ -57,6 +59,12 @@ public class SearchFragment extends Fragment {
         imageViewSearchMenu = (ImageButton) v.findViewById(R.id.imageViewSearchMenu);
         recyclerView =(RecyclerView) v.findViewById(R.id.rv);
 
+        tv_search1 = (TextView)v.findViewById(R.id.tv_search1);
+        tv_search2 = (TextView)v.findViewById(R.id.tv_search2);
+
+
+
+
 
         try {
             loadJson();
@@ -64,10 +72,46 @@ public class SearchFragment extends Fragment {
             e.printStackTrace();
         }
 
-        //SearchBar
-        EditText searchEditText = (EditText) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        searchEditText.setTextColor(ResourcesCompat.getColor(getResources(),R.color.colortitle,null));
-        searchEditText.setHintTextColor(ResourcesCompat.getColor(getResources(),R.color.txt_hint_text,null));
+        searchViewQuery.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                tv_search1.setVisibility(View.INVISIBLE);
+                tv_search2.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
+
+                if(query.length()>0){
+                    listAdapter.getFilter().filter(query);
+                }else{
+                    listAdapter.getFilter().filter("");
+                }
+
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                tv_search1.setVisibility(View.INVISIBLE);
+                tv_search2.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
+
+                if(newText.length()>0){
+                    listAdapter.getFilter().filter(newText);
+                }else{
+                    listAdapter.getFilter().filter("");
+                }
+
+               //listAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+
+//        //SearchBar
+//        EditText searchEditText = (EditText) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+//        searchEditText.setTextColor(ResourcesCompat.getColor(getResources(),R.color.colortitle,null));
+//        searchEditText.setHintTextColor(ResourcesCompat.getColor(getResources(),R.color.txt_hint_text,null));
+
+         //Toast.makeText(getContext(), "Résultat de votre recherche "+searchEditText.getText().toString(), Toast.LENGTH_SHORT).show();
 
         ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
         searchImage.setVisibility(View.GONE);
@@ -108,7 +152,7 @@ public class SearchFragment extends Fragment {
                 listPlaces.add(pl);
             }
 
-            ListAdapter listAdapter = new ListAdapter(getContext(),listPlaces);
+            listAdapter = new ListAdapter(getContext(),listPlaces);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(listAdapter);

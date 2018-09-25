@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import android.widget.Filter;
 import com.fongwama.edupalu_v3.R;
-import com.fongwama.edupalu_v3.controller.Response;
 import com.fongwama.edupalu_v3.model.PlaceModel;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
 
@@ -68,10 +69,46 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
             adresse_pharma = (TextView)itemView.findViewById(R.id.addr_pharma);
             ville_pharma = (TextView)itemView.findViewById(R.id.villePharma);
             phone_pharma = (TextView)itemView.findViewById(R.id.contact_1_pharma);
+        }
+    }
 
+
+
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<PlaceModel> filteredList = new ArrayList<PlaceModel>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(data);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (PlaceModel placeItem : data) {
+                    if (placeItem.getName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(placeItem);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
         }
 
-    }
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            data.clear();
+            data.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
 }
 
 
