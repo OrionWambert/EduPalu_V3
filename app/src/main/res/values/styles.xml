@@ -31,5 +31,12 @@
         <item name="android:padding">@dimen/title_padding_size</item>
     </style>
 
+    <style name="style_card_default">
+        <!--<item name="android:textSize">@dimen/text_default_size</item>-->
+        <item name="android:textColor">@color/color_default_text</item>
+        <item name="android:padding">@dimen/title_padding_size</item>
+        <item name="android:background">@color/bg_white</item>
+    </style>
+
 
 </resources>

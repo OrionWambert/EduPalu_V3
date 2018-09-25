@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#caffffff"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.SearchFragment"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/cardS"
+
+        app:cardElevation="5dp">
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:id="@+id/searchViewQuery"
+            app:defaultQueryHint="Trouver une Pharmacie"
+            app:queryHint="Rechercher une pharma"
+            android:autofillHints="Recharche"
+            android:textColor="@color/color_default_text"
+            app:iconifiedByDefault="true"
+            android:theme="@style/Widget.AppCompat.SearchView"
+            app:searchIcon="@drawable/ic_search_"
+            app:closeIcon="@drawable/ic_close"
+            android:layout_marginRight="20dp" />
+        <ImageButton
+            android:layout_marginRight="8dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="end|center_vertical"
+            android:id="@+id/imageViewSearchMenu"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:src="@drawable/ic_place_black_24dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Résultats de la recherche :"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
