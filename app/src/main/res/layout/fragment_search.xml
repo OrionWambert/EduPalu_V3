@@ -22,8 +22,6 @@
             android:layout_marginEnd="20dp"
             android:id="@+id/searchViewQuery"
             app:defaultQueryHint="Trouver une Pharmacie"
-            app:queryHint="Rechercher une pharma"
-            android:autofillHints="Recharche"
             android:textColor="@color/color_default_text"
             app:iconifiedByDefault="true"
             android:theme="@style/Widget.AppCompat.SearchView"
@@ -60,7 +58,6 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
-        android:visibility="gone"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

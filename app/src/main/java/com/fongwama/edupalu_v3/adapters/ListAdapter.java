@@ -1,7 +1,6 @@
 package com.fongwama.edupalu_v3.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +18,17 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
 
-    private Context mContext = null;
-    private ArrayList<PlaceModel> data = null;
+    private Context mContext;
+    private List<PlaceModel> data;
+    private List<PlaceModel> dataFilterd;
+    private PlaceAdapterListener listener;
 
 
-    public ListAdapter(Context mContext, ArrayList<PlaceModel> data) {
+    public ListAdapter(Context mContext, ArrayList<PlaceModel> data,PlaceAdapterListener listener) {
         this.mContext = mContext;
         this.data = data;
+        this.listener = listener;
+        this.dataFilterd = data;
     }
 
     @Override
@@ -54,8 +57,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return dataFilterd.size();
     }
+
 
     public final class ViewHolder extends RecyclerView.ViewHolder{
         ImageView img_pharma;
@@ -69,49 +73,60 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
             adresse_pharma = (TextView)itemView.findViewById(R.id.addr_pharma);
             ville_pharma = (TextView)itemView.findViewById(R.id.villePharma);
             phone_pharma = (TextView)itemView.findViewById(R.id.contact_1_pharma);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onContactSelected(dataFilterd.get(getAdapterPosition()));
+                }
+            });
         }
     }
 
-
-
-    public Filter getFilter() {
-        return exampleFilter;
+    public void initData(ArrayList<PlaceModel> p){
+        dataFilterd.clear();
+        data.addAll(p);
+        notifyDataSetChanged();
     }
+
 
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            List<PlaceModel> filteredList = new ArrayList<PlaceModel>();
-
-            if (constraint == null || constraint.length() == 0 || constraint.toString().equals("")) {
-                filteredList.clear();
-                filteredList.removeAll(filteredList);
-            } else {
-                String filterPattern = constraint.toString().toLowerCase().trim();
-
+            String charString = constraint.toString();
+            if(charString.isEmpty()){
+                dataFilterd = data;
+            }else {
+                ArrayList<PlaceModel> filteredList = new ArrayList<>();
                 for (PlaceModel placeItem : data) {
-                    if (placeItem.getName().toLowerCase().contains(filterPattern)) {
-                       filteredList.add(placeItem);
-
-                    }else if (placeItem.getAddress().toLowerCase().contains(filterPattern)){
+                    if (placeItem.getName().toLowerCase().contains(charString.toLowerCase()) || placeItem.getAddress().contains(charString)) {
                         filteredList.add(placeItem);
                     }
                 }
+
             }
 
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
 
+            FilterResults results = new FilterResults();
+            results.values = results;
             return results;
         }
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            data.clear();
-            data.addAll((List) results.values);
+            dataFilterd = (ArrayList<PlaceModel>) results.values;
+
+//            dataFilterd.clear();
+//            dataFilterd.addAll((ArrayList) results.values);
             notifyDataSetChanged();
         }
     };
+
+
+    public interface PlaceAdapterListener {
+        void onContactSelected(PlaceModel placeModel);
+    }
+
 
 }
 

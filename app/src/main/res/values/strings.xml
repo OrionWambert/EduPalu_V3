@@ -216,6 +216,7 @@ En Afrique, les espèces les plus importantes se reproduisent à partir de larve
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">taper un nom</string>
     <!-- end label main fragment cardview imagebutton-->
 
     <!--end text and titles of se_proteger-->

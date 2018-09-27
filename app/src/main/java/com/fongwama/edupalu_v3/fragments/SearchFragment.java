@@ -2,23 +2,19 @@ package com.fongwama.edupalu_v3.fragments;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fongwama.edupalu_v3.R;
-import com.fongwama.edupalu_v3.SearchActivity;
 import com.fongwama.edupalu_v3.adapters.ListAdapter;
 import com.fongwama.edupalu_v3.model.PlaceModel;
 
@@ -31,7 +27,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements SearchView.OnQueryTextListener, ListAdapter.PlaceAdapterListener {
     SearchView searchViewQuery;
     ImageButton imageViewSearchMenu;
 
@@ -62,8 +58,7 @@ public class SearchFragment extends Fragment {
 
         tv_search1 = (TextView)v.findViewById(R.id.tv_search1);
         tv_search2 = (TextView)v.findViewById(R.id.tv_search2);
-
-
+        searchViewQuery.setOnQueryTextListener(this);
 
 
 
@@ -73,38 +68,6 @@ public class SearchFragment extends Fragment {
             e.printStackTrace();
         }
 
-        searchViewQuery.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                tv_search1.setVisibility(View.GONE);
-                tv_search2.setVisibility(View.VISIBLE);
-                recyclerView.setVisibility(View.VISIBLE);
-                listAdapter.getFilter().filter(newText);
-                return true;
-            }
-        });
-
-        searchViewQuery.setOnSearchClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "topti", Toast.LENGTH_SHORT).show();
-            }
-        });
-        searchViewQuery.setOnCloseListener(new SearchView.OnCloseListener() {
-            @Override
-            public boolean onClose() {
-                tv_search1.setVisibility(View.VISIBLE);
-                tv_search2.setVisibility(View.GONE);
-                recyclerView.clearFocus();
-                return false;
-            }
-        });
 
         ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
         searchImage.setVisibility(View.GONE);
@@ -112,7 +75,6 @@ public class SearchFragment extends Fragment {
 
         return v;
     }
-
 
     private void loadJson() throws IOException {
         InputStream inputStream = null;
@@ -145,13 +107,28 @@ public class SearchFragment extends Fragment {
                 listPlaces.add(pl);
             }
 
-            listAdapter = new ListAdapter(getContext(),listPlaces);
+            listAdapter = new ListAdapter(getContext(),listPlaces,this);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(listAdapter);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private void searchData(String str){
+        ArrayList<PlaceModel> ps = new ArrayList<>();
+        if (!str.trim().isEmpty()){
+            for (PlaceModel p : listPlaces){
+                if (p.getName().toLowerCase().contains(str)){
+                    ps.add(p);
+                }
+            }
+        }
+        if (ps.size() <= 0){
+            listAdapter.initData(listPlaces);
+        }
+        listAdapter.initData(ps);
     }
 
     private void popUpShowNearToMe(){
@@ -164,5 +141,29 @@ public class SearchFragment extends Fragment {
     }
 
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
 
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        if (!newText.trim().isEmpty()){
+            tv_search1.setVisibility(View.GONE);
+            tv_search2.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.VISIBLE);
+            searchData(newText.toLowerCase());
+        }else if(newText.toString().trim().isEmpty()){
+            tv_search1.setVisibility(View.GONE);
+            tv_search2.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.VISIBLE);
+            searchData(newText.toLowerCase());
+        }
+        return true;
+    }
+
+    @Override
+    public void onContactSelected(PlaceModel placeModel) {
+        Toast.makeText(getActivity(), "numero : "+placeModel.getName(), Toast.LENGTH_SHORT).show();
+    }
 }

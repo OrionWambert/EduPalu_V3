@@ -1,6 +1,10 @@
 package com.fongwama.edupalu_v3;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -34,48 +38,41 @@ public class SearchActivity extends AppCompatActivity {
     SearchView searchViewQuery;
     ImageButton imageViewSearchMenu;
 
-
     RecyclerView recyclerView;
     ArrayList<PlaceModel>listPlaces;
+
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        searchViewQuery = (SearchView)findViewById(R.id.searchViewQuery);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Recheerche");
+
+        //searchViewQuery = (SearchView)findViewById(R.id.searchViewQuery);
         imageViewSearchMenu = (ImageButton) findViewById(R.id.imageViewSearchMenu);
         recyclerView =(RecyclerView) findViewById(R.id.rv);
 
+        // white background notification bar
+        whiteNotificationBar(recyclerView);
 
-        try {
-            loadJson();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+
+    }
+
+    private void whiteNotificationBar(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int flags = view.getSystemUiVisibility();
+            flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            view.setSystemUiVisibility(flags);
+            getWindow().setStatusBarColor(Color.WHITE);
         }
-
-        //SearchBar
-        EditText searchEditText = (EditText) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        searchEditText.setTextColor(ResourcesCompat.getColor(getResources(),R.color.colortitle,null));
-        searchEditText.setHintTextColor(ResourcesCompat.getColor(getResources(),R.color.txt_hint_text,null));
-
-        ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
-        searchImage.setVisibility(View.GONE);
-        popUpShowNearToMe();
-
     }
 
-
-    private void popUpShowNearToMe(){
-        imageViewSearchMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SearchActivity.this, "Looking for the near drugStore", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     private void loadJson() throws IOException {
         InputStream inputStream = null;
@@ -108,10 +105,6 @@ public class SearchActivity extends AppCompatActivity {
                 listPlaces.add(pl);
             }
 
-            ListAdapter listAdapter = new ListAdapter(this,listPlaces);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(listAdapter);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -121,6 +114,31 @@ public class SearchActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_search, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        searchView = (SearchView) menu.findItem(R.id.search_action).getActionView();
+
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+
+        // listening to search query text change
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(SearchActivity.this, query, Toast.LENGTH_SHORT).show();
+                // filter recycler view when query submitted
+               // mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                Toast.makeText(SearchActivity.this, query, Toast.LENGTH_SHORT).show();
+                // filter recycler view when text is changed
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+        });
+
         return true;
     }
 
