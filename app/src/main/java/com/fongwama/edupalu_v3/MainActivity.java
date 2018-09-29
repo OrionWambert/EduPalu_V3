@@ -110,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
             return true;
         }else if(id == R.id.action_search){
-            Intent i = new Intent(this, SearchActivity.class);
-            startActivity(i);
+//            Intent i = new Intent(this, SearchActivity.class);
+//            startActivity(i);
 //            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
 //            FragmentTransaction ft = fm.beginTransaction();
 //            SearchFragment searchFragment = new SearchFragment();
