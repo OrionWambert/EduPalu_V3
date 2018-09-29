@@ -8,7 +8,7 @@ public class PlaceModel {
     private long lat;
     private long lon;
     private String city;
-    private String name;
+     String name;
     private String address;
     private String tel1;
     private String tel2;

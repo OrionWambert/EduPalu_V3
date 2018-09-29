@@ -14,12 +14,12 @@
         android:layout_height="wrap_content"
         app:cardUseCompatPadding="true"
         android:id="@+id/cardS"
-
+        android:layout_marginBottom="0dp"
         app:cardElevation="5dp">
         <android.support.v7.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="40dp"
             android:id="@+id/searchViewQuery"
             app:defaultQueryHint="Trouver une Pharmacie"
             android:textColor="@color/color_default_text"
@@ -27,7 +27,7 @@
             android:theme="@style/Widget.AppCompat.SearchView"
             app:searchIcon="@drawable/ic_search_"
             app:closeIcon="@drawable/ic_close"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="0dp" />
         <ImageButton
             android:layout_marginRight="8dp"
             android:layout_width="25dp"
@@ -39,26 +39,9 @@
 
     </android.support.v7.widget.CardView>
 
-    <TextView
-        android:id="@+id/tv_search1"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Aucun resultat à afficher"/>
-
-    <TextView
-        android:id="@+id/tv_search2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:padding="10dp"
-        android:text="Résultats de la recherche :"
-        android:textStyle="bold" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
-        android:layout_margin="8dp"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

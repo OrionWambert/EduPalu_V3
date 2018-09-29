@@ -2,6 +2,7 @@ package com.fongwama.edupalu_v3.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,26 +10,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import android.widget.Filter;
 import com.fongwama.edupalu_v3.R;
 import com.fongwama.edupalu_v3.model.PlaceModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
 
     private Context mContext;
-    private List<PlaceModel> data;
-    private List<PlaceModel> dataFilterd;
+    private ArrayList<PlaceModel> dataList;
+    private ArrayList<PlaceModel> dataListFiltered;
     private PlaceAdapterListener listener;
 
 
-    public ListAdapter(Context mContext, ArrayList<PlaceModel> data,PlaceAdapterListener listener) {
+    public ListAdapter(Context mContext, ArrayList<PlaceModel> dataList,PlaceAdapterListener listener) {
         this.mContext = mContext;
-        this.data = data;
+        this.dataList = dataList;
         this.listener = listener;
-        this.dataFilterd = data;
+        this.dataListFiltered = dataList;
     }
 
     @Override
@@ -40,7 +39,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int i) {
         //Glide.with(myContext).load(R.drawable.ic_pharmacie).crossFade()into(viewHolder.img_pharma);
-        holder.name_pharma.setText(data.get(i).getName());
+        holder.name_pharma.setText(dataList.get(i).getName());
 
         if(holder.name_pharma.getText().toString().toLowerCase().contains("nuit")){
             holder.img_pharma.setImageResource(R.drawable.ic_brightness_3_black_24dp);
@@ -50,15 +49,46 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
 
 
         //holder.distance_pharma.setText(""+data.get(i).getId());
-        holder.adresse_pharma.setText(data.get(i).getAddress());
-        holder.ville_pharma.setText(data.get(i).getCity());
-        holder.phone_pharma.setText(data.get(i).getTel1() + " / "+ data.get(i).getTel2());
+        holder.adresse_pharma.setText(dataList.get(i).getAddress());
+        holder.ville_pharma.setText(dataList.get(i).getCity());
+        holder.phone_pharma.setText(dataList.get(i).getTel1() + " / "+ dataList.get(i).getTel2());
     }
 
     @Override
     public int getItemCount() {
-        return dataFilterd.size();
+        return dataListFiltered.size();
     }
+
+//    @Override
+//    public Filter getFilter() {
+//        return new Filter() {
+//            @Override
+//            protected FilterResults performFiltering(CharSequence charSequence) {
+//                String charString = charSequence.toString();
+//                if(charString.isEmpty()){
+//                    dataListFiltered = dataList;
+//                }else {
+//                    ArrayList<PlaceModel> filteredList = new ArrayList<>();
+//                    for(PlaceModel row : dataList){
+//                        if(row.getName().toLowerCase().contains(charString.toLowerCase())){
+//                            filteredList.add(row);
+//                        }
+//                    }
+//                    dataListFiltered=filteredList;
+//                }
+//                FilterResults filterResults = new FilterResults();
+//                filterResults.values = dataListFiltered;
+//                return filterResults;
+//            }
+//
+//            @Override
+//            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+//                dataListFiltered =(ArrayList<PlaceModel>) filterResults.values;
+//                Log.d("Verif","juskici ca marche");
+//                notifyDataSetChanged();
+//            }
+//        };
+//    }
 
 
     public final class ViewHolder extends RecyclerView.ViewHolder{
@@ -77,50 +107,52 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.onContactSelected(dataFilterd.get(getAdapterPosition()));
+                    listener.onContactSelected(dataListFiltered.get(getAdapterPosition()));
                 }
             });
         }
     }
 
-    public void initData(ArrayList<PlaceModel> p){
-        dataFilterd.clear();
-        data.addAll(p);
-        notifyDataSetChanged();
-    }
 
 
-    private Filter exampleFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            String charString = constraint.toString();
-            if(charString.isEmpty()){
-                dataFilterd = data;
-            }else {
-                ArrayList<PlaceModel> filteredList = new ArrayList<>();
-                for (PlaceModel placeItem : data) {
-                    if (placeItem.getName().toLowerCase().contains(charString.toLowerCase()) || placeItem.getAddress().contains(charString)) {
-                        filteredList.add(placeItem);
-                    }
-                }
-
-            }
+//    public void initData(ArrayList<PlaceModel> p){
+//        dataFilterd.clear();
+//        data.addAll(p);
+//        notifyDataSetChanged();
+//    }
 
 
-            FilterResults results = new FilterResults();
-            results.values = results;
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            dataFilterd = (ArrayList<PlaceModel>) results.values;
-
-//            dataFilterd.clear();
-//            dataFilterd.addAll((ArrayList) results.values);
-            notifyDataSetChanged();
-        }
-    };
+//    private Filter exampleFilter = new Filter() {
+//        @Override
+//        protected FilterResults performFiltering(CharSequence constraint) {
+//            String charString = constraint.toString();
+//            if(charString.isEmpty()){
+//                dataFilterd = data;
+//            }else {
+//                ArrayList<PlaceModel> filteredList = new ArrayList<>();
+//                for (PlaceModel placeItem : data) {
+//                    if (placeItem.getName().toLowerCase().contains(charString.toLowerCase()) || placeItem.getAddress().contains(charString)) {
+//                        filteredList.add(placeItem);
+//                    }
+//                }
+//
+//            }
+//
+//
+//            FilterResults results = new FilterResults();
+//            results.values = results;
+//            return results;
+//        }
+//
+//        @Override
+//        protected void publishResults(CharSequence constraint, FilterResults results) {
+//            dataFilterd = (ArrayList<PlaceModel>) results.values;
+//
+////            dataFilterd.clear();
+////            dataFilterd.addAll((ArrayList) results.values);
+//            notifyDataSetChanged();
+//        }
+//    };
 
 
     public interface PlaceAdapterListener {

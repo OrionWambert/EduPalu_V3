@@ -1,6 +1,7 @@
 package com.fongwama.edupalu_v3.fragments;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,7 +37,6 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     ArrayList<PlaceModel>listPlaces;
     ListAdapter listAdapter;
 
-    TextView tv_search1,tv_search2;
     public SearchFragment() {
         // Required empty public constructor
     }
@@ -56,8 +56,6 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
         imageViewSearchMenu = (ImageButton) v.findViewById(R.id.imageViewSearchMenu);
         recyclerView =(RecyclerView) v.findViewById(R.id.rv);
 
-        tv_search1 = (TextView)v.findViewById(R.id.tv_search1);
-        tv_search2 = (TextView)v.findViewById(R.id.tv_search2);
         searchViewQuery.setOnQueryTextListener(this);
 
 
@@ -116,20 +114,20 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
         }
     }
 
-    private void searchData(String str){
-        ArrayList<PlaceModel> ps = new ArrayList<>();
-        if (!str.trim().isEmpty()){
-            for (PlaceModel p : listPlaces){
-                if (p.getName().toLowerCase().contains(str)){
-                    ps.add(p);
-                }
-            }
-        }
-        if (ps.size() <= 0){
-            listAdapter.initData(listPlaces);
-        }
-        listAdapter.initData(ps);
-    }
+//    private void searchData(String str){
+//        ArrayList<PlaceModel> ps = new ArrayList<>();
+//        if (!str.trim().isEmpty()){
+//            for (PlaceModel p : listPlaces){
+//                if (p.getName().toLowerCase().contains(str)){
+//                    ps.add(p);
+//                }
+//            }
+//        }
+//        if (ps.size() <= 0){
+//            listAdapter.initData(listPlaces);
+//        }
+//        listAdapter.initData(ps);
+//    }
 
     private void popUpShowNearToMe(){
         imageViewSearchMenu.setOnClickListener(new View.OnClickListener() {
@@ -143,23 +141,16 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        //Toast.makeText(getActivity(), "we listen if text submit", Toast.LENGTH_SHORT).show();
+
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        if (!newText.trim().isEmpty()){
-            tv_search1.setVisibility(View.GONE);
-            tv_search2.setVisibility(View.VISIBLE);
-            recyclerView.setVisibility(View.VISIBLE);
-            searchData(newText.toLowerCase());
-        }else if(newText.toString().trim().isEmpty()){
-            tv_search1.setVisibility(View.GONE);
-            tv_search2.setVisibility(View.VISIBLE);
-            recyclerView.setVisibility(View.VISIBLE);
-            searchData(newText.toLowerCase());
-        }
-        return true;
+       // Toast.makeText(getActivity(), "we listen if text has changed", Toast.LENGTH_SHORT).show();
+
+        return false;
     }
 
     @Override
