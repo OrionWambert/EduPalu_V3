@@ -105,6 +105,7 @@ La plante Artemisia est utilisée depuis très longtemps dans la médecine tradi
 
 La plante Artemisia peut être cultivée dans de nombreux pays tropicaux. Le défi est ensuite de disposer de bons équipements pour extraire le principe actif de la plante.</p>
 
+
        <big><i> <b>\"Attention, seul un médecin peut prescrire un antipaludique.\"</b></i></big>
 
 <p><b><u>La quinine</u></b>:
@@ -189,6 +190,7 @@ Dans les pays où les moustiques piquent et se reposent à l\'intérieur des mai
 <b><u>D\'abord prévenir</u></b> :
 
 La prévention est toujours la meilleure approche. Le contrôle du paludisme a été réussi en Europe et aux États-Unis en asséchant les sites de reproduction des moustiques et en ayant des protections pour éviter l’entrée des moustiques dans les maisons. La lutte chimique n\'a joué qu\'un rôle mineur. Ces méthodes sont efficaces lorsque les sites de reproduction des moustiques sont bien définis, que la société est bien organisée et a des ressources financières suffisantes."</string>
+    <!--end text and titles of se_proteger-->
     <string name="proteger_title">"Lutter contre les moustiques"</string>
     <string name="proteger_text_9">"<b><u>Les anophèles  </u></b>:
 
@@ -202,6 +204,7 @@ Chez l\'Homme, le paludisme est seulement transmis par des moustiques appartenan
 <b><u>Des modes de vie différents </u></b>:
 
 En Afrique, les espèces les plus importantes se reproduisent à partir de larves qui se développent dans de l\'eau stagnante. Les adultes se reposent dans nos maisons et piquent aussi à l\'intérieur des maisons."</string>
+
 
     <!--label main fragment cardview imagebutton-->
     <string name="comprendre_label">comprendre</string>
@@ -219,5 +222,19 @@ En Afrique, les espèces les plus importantes se reproduisent à partir de larve
     <string name="search_hint">taper un nom</string>
     <!-- end label main fragment cardview imagebutton-->
 
-    <!--end text and titles of se_proteger-->
+
+    <!--string for appIntro sliders-->
+        <string name="title_activity_welcome">Home Screen</string>
+        <string name="next">SUIVANT</string>
+        <string name="skip">SAUTER</string>
+        <string name="start">COMPRIS</string>
+        <string name="slide_1_title">EDUPALU</string>
+        <string name="slide_1_desc">Bienvenue sur EduPalu!</string>
+        <string name="slide_2_title">Titre 2</string>
+        <string name="slide_2_desc">Description 2</string>
+        <string name="slide_3_title">Titre 3</string>
+        <string name="slide_3_desc">Description 3</string>
+        <string name="main_screen_desc">There are two steps to see the Intro Screen slider.\n\n1. Goto Settings -> apps -> welcome slider -> clear data.\n2. Click the below Play Again button</string>
+        <string name="action_guide_app">Guide Appli</string>
+    <!--//End string for appIntro sliders-->
 </resources>

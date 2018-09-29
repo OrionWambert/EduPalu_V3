@@ -27,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
         }, SPLASH_TIME_OUT);
     }
     private void goToMainActivity(){
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        Intent intent = new Intent(SplashActivity.this, SliderActivity.class);
         startActivity(intent);
         //overridePendingTransition(R.anim.translation_activity_in, R.anim.translation_activity_out);
         finish();

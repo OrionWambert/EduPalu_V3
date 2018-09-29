@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.fongwama.edupalu_v3.adapters.ListAdapter;
+import com.fongwama.edupalu_v3.controller.LaunchManager;
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
 import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -110,14 +112,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
             return true;
         }else if(id == R.id.action_search){
-//            Intent i = new Intent(this, SearchActivity.class);
-//            startActivity(i);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             SearchFragment searchFragment = new SearchFragment();
             ft.replace(R.id.main_frame, searchFragment);
             ft.commit();
 
+        }else if(id == R.id.action_guide_app){
+            LaunchManager LaunchManager = new LaunchManager(getApplicationContext());
+            // make first time launch TRUE
+            LaunchManager.setFirstTimeLaunch(true);
+            startActivity(new Intent(MainActivity.this, SliderActivity.class));
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
