@@ -1,19 +1,33 @@
 package com.fongwama.edupalu_v3.model;
 
+
+
 /**
  * Created by Ricken BAZOLO on 30/05/2016.
  */
 public class PlaceModel {
     private int id;
-    private long lat;
-    private long lon;
-    private String city;
     private String name;
     private String address;
+    private String city;
+    private long lat;
+    private long lon;
     private String tel1;
     private String tel2;
 
+
     public PlaceModel() {
+    }
+
+    public PlaceModel(int id, String name, String address, String city, long lat, long lon, String tel1, String tel2) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.lat = lat;
+        this.lon = lon;
+        this.tel1 = tel1;
+        this.tel2 = tel2;
     }
 
     public int getId() {

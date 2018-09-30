@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.fongwama.edupalu_v3.R;
 import com.fongwama.edupalu_v3.adapters.ListAdapter;
+import com.fongwama.edupalu_v3.data.PlacePharmaDao;
 import com.fongwama.edupalu_v3.model.PlaceModel;
 
 import org.json.JSONArray;
@@ -36,6 +37,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     RecyclerView recyclerView;
     ArrayList<PlaceModel>listPlaces;
     ListAdapter listAdapter;
+    private PlacePharmaDao placePharmaDao;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -58,14 +60,13 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
         searchViewQuery.setOnQueryTextListener(this);
 
+//        try {
+//            loadJson();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-
-        try {
-            loadJson();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadList();
 
         ImageView searchImage = (ImageView) searchViewQuery.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
         searchImage.setVisibility(View.GONE);
@@ -74,44 +75,49 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
         return v;
     }
 
-    private void loadJson() throws IOException {
-        InputStream inputStream = null;
+//    private void loadJson() throws IOException {
+//        InputStream inputStream = null;
+//        listPlaces = new ArrayList<PlaceModel>();
+//
+//        JSONArray jsonArray = null;
+//        try {
+//            inputStream = getActivity().getAssets().open("places_db.json");
+//            byte[] buffer = new byte[inputStream.available()];
+//            inputStream.read(buffer);
+//            inputStream.close();
+//            String json = new String(buffer);
+//            jsonArray = new JSONArray(json);
+//            for (int i = 0; i < jsonArray.length(); i++){
+//                JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                PlaceModel pl = new PlaceModel();
+//                pl.setAddress(jsonObject.getString("address"));
+//                pl.setCity(jsonObject.getString("city"));
+//                pl.setId(jsonObject.getInt("id"));
+//                pl.setLat(jsonObject.getInt("lat"));
+//                pl.setLon(jsonObject.getInt("lon"));
+//                pl.setName(jsonObject.getString("name"));
+//                pl.setTel1(jsonObject.getString("tel1"));
+//                pl.setTel2(jsonObject.getString("tel2"));
+//                listPlaces.add(pl);
+//            }
+//            listAdapter = new ListAdapter(getContext(),listPlaces,this);
+//            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//            recyclerView.setHasFixedSize(true);
+//            recyclerView.setAdapter(listAdapter);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    public void loadList(){
         listPlaces = new ArrayList<PlaceModel>();
+        placePharmaDao = new PlacePharmaDao(getContext());
 
-
-        JSONArray jsonArray = null;
-        try {
-
-            inputStream = getActivity().getAssets().open("places_db.json");
-
-            byte[] buffer = new byte[inputStream.available()];
-            inputStream.read(buffer);
-            inputStream.close();
-            String json = new String(buffer);
-
-            jsonArray = new JSONArray(json);
-
-            for (int i = 0; i < jsonArray.length(); i++){
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                PlaceModel pl = new PlaceModel();
-                pl.setAddress(jsonObject.getString("address"));
-                pl.setCity(jsonObject.getString("city"));
-                pl.setId(jsonObject.getInt("id"));
-                pl.setLat(jsonObject.getInt("lat"));
-                pl.setLon(jsonObject.getInt("lon"));
-                pl.setName(jsonObject.getString("name"));
-                pl.setTel1(jsonObject.getString("tel1"));
-                pl.setTel2(jsonObject.getString("tel2"));
-                listPlaces.add(pl);
-            }
-
-            listAdapter = new ListAdapter(getContext(),listPlaces,this);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(listAdapter);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        listPlaces = placePharmaDao.getPlaceModels();
+        listAdapter = new ListAdapter(getContext(),listPlaces,this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(listAdapter);
     }
 
 //    private void searchData(String str){
@@ -142,13 +148,27 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextSubmit(String query) {
         //Toast.makeText(getActivity(), "we listen if text submit", Toast.LENGTH_SHORT).show();
+        placePharmaDao.filterPlaceModel(query);
 
+        listPlaces = placePharmaDao.filterPlaceModel(query);
+
+        listAdapter = new ListAdapter(getContext(),listPlaces,this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(listAdapter);
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
        // Toast.makeText(getActivity(), "we listen if text has changed", Toast.LENGTH_SHORT).show();
+        placePharmaDao.filterPlaceModel(newText);
+
+        listPlaces = placePharmaDao.filterPlaceModel(newText);
+        listAdapter = new ListAdapter(getContext(),listPlaces,this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(listAdapter);
 
         return false;
     }
