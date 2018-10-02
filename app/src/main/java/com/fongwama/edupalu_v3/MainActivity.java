@@ -1,19 +1,12 @@
 package com.fongwama.edupalu_v3;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,35 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.fongwama.edupalu_v3.adapters.ListAdapter;
 import com.fongwama.edupalu_v3.controller.LaunchManager;
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
 import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
 import com.fongwama.edupalu_v3.fragments.ProtegerFragment;
 import com.fongwama.edupalu_v3.fragments.QuestionReponseFragment;
-import com.fongwama.edupalu_v3.fragments.SearchFragment;
 import com.fongwama.edupalu_v3.fragments.SoignerFragment;
-import com.fongwama.edupalu_v3.model.PlaceModel;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -96,7 +67,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
+
+        SearchView searchView = null;
+        if (searchItem != null) {
+            searchView = (SearchView) searchItem.getActionView();
+        }
+        if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        }
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -112,19 +95,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
             return true;
         }else if(id == R.id.action_search){
-            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            SearchFragment searchFragment = new SearchFragment();
-            ft.replace(R.id.main_frame, searchFragment);
-            ft.commit();
 
-        }else if(id == R.id.action_guide_app){
-            LaunchManager LaunchManager = new LaunchManager(getApplicationContext());
-            // make first time launch TRUE
-            LaunchManager.setFirstTimeLaunch(true);
-            startActivity(new Intent(MainActivity.this, SliderActivity.class));
-            finish();
+//            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+//            FragmentTransaction ft = fm.beginTransaction();
+//            SearchFragment searchFragment = new SearchFragment();
+//            ft.replace(R.id.main_frame, searchFragment);
+//            ft.commit();
+
+//            SearchView searchView =(SearchView) item.getActionView();
+
+
         }
+//        else if(id == R.id.action_guide_app){
+//            LaunchManager LaunchManager = new LaunchManager(getApplicationContext());
+//            // make first time launch TRUE
+//            LaunchManager.setFirstTimeLaunch(true);
+//            startActivity(new Intent(MainActivity.this, SliderActivity.class));
+//            finish();
+//        }
 
         return super.onOptionsItemSelected(item);
     }

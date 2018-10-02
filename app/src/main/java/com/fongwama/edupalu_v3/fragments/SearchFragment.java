@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,14 +149,14 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextSubmit(String query) {
         //Toast.makeText(getActivity(), "we listen if text submit", Toast.LENGTH_SHORT).show();
-        placePharmaDao.filterPlaceModel(query);
+       // placePharmaDao.filterPlaceModel(query);
 
-        listPlaces = placePharmaDao.filterPlaceModel(query);
-
-        listAdapter = new ListAdapter(getContext(),listPlaces,this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(listAdapter);
+//        listPlaces = placePharmaDao.filterPlaceModel(query);
+//
+//        listAdapter = new ListAdapter(getContext(),listPlaces,this);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setAdapter(listAdapter);
         return false;
     }
 
@@ -163,7 +164,6 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     public boolean onQueryTextChange(String newText) {
        // Toast.makeText(getActivity(), "we listen if text has changed", Toast.LENGTH_SHORT).show();
         placePharmaDao.filterPlaceModel(newText);
-
         listPlaces = placePharmaDao.filterPlaceModel(newText);
         listAdapter = new ListAdapter(getContext(),listPlaces,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

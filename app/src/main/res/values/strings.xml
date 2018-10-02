@@ -236,5 +236,6 @@ En Afrique, les espèces les plus importantes se reproduisent à partir de larve
         <string name="slide_3_desc">Description 3</string>
         <string name="main_screen_desc">There are two steps to see the Intro Screen slider.\n\n1. Goto Settings -> apps -> welcome slider -> clear data.\n2. Click the below Play Again button</string>
         <string name="action_guide_app">Guide Appli</string>
+    <string name="search_title">Recherche</string>
     <!--//End string for appIntro sliders-->
 </resources>
