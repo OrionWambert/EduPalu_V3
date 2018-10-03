@@ -1,9 +1,12 @@
 package com.fongwama.edupalu_v3;
 
-
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.SearchView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.fongwama.edupalu_v3.controller.LaunchManager;
 import com.fongwama.edupalu_v3.fragments.ComprendreFragment;
 import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
@@ -19,13 +23,10 @@ import com.fongwama.edupalu_v3.fragments.ProtegerFragment;
 import com.fongwama.edupalu_v3.fragments.QuestionReponseFragment;
 import com.fongwama.edupalu_v3.fragments.SearchFragment;
 import com.fongwama.edupalu_v3.fragments.SoignerFragment;
-
-
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
-   // CoordinatorLayout cordinatorLayoutActivityA;
-
+    CoordinatorLayout cordinatorLayoutActivityA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +93,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
 
         }
+//        else if(id == R.id.action_guide_app){
+//            LaunchManager LaunchManager = new LaunchManager(getApplicationContext());
+//            // make first time launch TRUE
+//            LaunchManager.setFirstTimeLaunch(true);
+//            startActivity(new Intent(MainActivity.this, SliderActivity.class));
+//            finish();
+//        }
 
         return super.onOptionsItemSelected(item);
     }

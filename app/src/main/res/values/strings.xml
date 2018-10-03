@@ -105,6 +105,7 @@ La plante Artemisia est utilisée depuis très longtemps dans la médecine tradi
 
 La plante Artemisia peut être cultivée dans de nombreux pays tropicaux. Le défi est ensuite de disposer de bons équipements pour extraire le principe actif de la plante.</p>
 
+
        <big><i> <b>\"Attention, seul un médecin peut prescrire un antipaludique.\"</b></i></big>
 
 <p><b><u>La quinine</u></b>:
@@ -141,9 +142,9 @@ Mais cela prend du temps, environ 5 ans pour le développement de l'immunité co
 
 Dans très peu de temps, le premier vaccin contre le paludisme sera mis sur le marché mais son efficacité n’est pas encore très grande. Le développement du vaccin va continuer jusqu’à ce que celui-ci soit très efficace et puisse bien protéger la population.</p>
     </string>
-<!--end soigner et title an text-->
+    <!--end soigner et title an text-->
 
-<!--ext and titles of question/reponses-->
+    <!--ext and titles of question/reponses-->
     <string name="question_title">"Questions / réponses"</string>
     <string name="question_text">"<i>Voici une série de questions et de réponses autour du paludisme.</i>
 
@@ -167,7 +168,7 @@ Non, le moustique ne peut pas transmettre cette maladie.
 
 <big><b>Quels sont les symptômes possibles du paludisme ?</b></big>
 Les symptômes du paludisme sont : la fièvre, les frissons, les douleurs articulaires et musculaires, les maux de tête et la fatigue. Mais attention, seul un médecin peut correctement diagnostiquer le paludisme, après avoir pris connaissance des résultats de l\'examen de la goutte épaisse ou du test de diagnostic rapide."</string>
-     <!--/end text and titles of question/reponses-->
+    <!--/end text and titles of question/reponses-->
 
     <!--text and titles of se_proteger-->
     <string name="proteger_text_2">"Les larves de moustiques se développent dans de l\'eau stagnante."</string>
@@ -177,7 +178,7 @@ Les symptômes du paludisme sont : la fièvre, les frissons, les douleurs articu
 
 Les larvicides sont des substances chimiques ou biologiques qui peuvent être utilisées pour tuer les larves de moustiques. Ils sont souvent utilisés dans les zones marécageuses afin de freiner le développement des moustiques. Cette technique est compliquée car les larvicides doivent être sélectifs, c\'est-à-dire qu\'ils doivent bien détruire les larves de moustiques mais ne doivent pas avoir d\'effet sur les larves des autres insectes et des petits crustacés aquatiques par exemple. De plus, les larves de moustiques peuvent s\'adapter aux produits utilisés et développer des mécanismes de résistances. Les scientifiques surveillent donc très régulièrement leur efficacité et continuent de chercher des produits plus efficaces."</string>
 
-<string name="proteger_text_6">"<b><u>Les moustiquaires imprégnées  </u></b>:
+    <string name="proteger_text_6">"<b><u>Les moustiquaires imprégnées  </u></b>:
 
 Les moustiquaires imprégnées d’insecticide sont un grand progrès. Les moustiquaires empêchent que les personnes puissent être piquées lorsqu\'elles dorment."</string>
 
@@ -189,6 +190,7 @@ Dans les pays où les moustiques piquent et se reposent à l\'intérieur des mai
 <b><u>D\'abord prévenir</u></b> :
 
 La prévention est toujours la meilleure approche. Le contrôle du paludisme a été réussi en Europe et aux États-Unis en asséchant les sites de reproduction des moustiques et en ayant des protections pour éviter l’entrée des moustiques dans les maisons. La lutte chimique n\'a joué qu\'un rôle mineur. Ces méthodes sont efficaces lorsque les sites de reproduction des moustiques sont bien définis, que la société est bien organisée et a des ressources financières suffisantes."</string>
+    <!--end text and titles of se_proteger-->
     <string name="proteger_title">"Lutter contre les moustiques"</string>
     <string name="proteger_text_9">"<b><u>Les anophèles  </u></b>:
 
@@ -203,16 +205,37 @@ Chez l\'Homme, le paludisme est seulement transmis par des moustiques appartenan
 
 En Afrique, les espèces les plus importantes se reproduisent à partir de larves qui se développent dans de l\'eau stagnante. Les adultes se reposent dans nos maisons et piquent aussi à l\'intérieur des maisons."</string>
 
+
     <!--label main fragment cardview imagebutton-->
-        <string name="comprendre_label">comprendre</string>
-        <string name="diagnostic_label">Diagnostiquer</string>
-        <string name="proteger_label">Se protéger</string>
-        <string name="soigner_label">Se soigner</string>
-        <string name="rechercher_label">Rechercher</string>
-        <string name="questions_reponses_label">Questions / Réponses</string>
-        <string name="quiz_label">Jouer : Le quiz</string>
-        <string name="chasse_parasites_label">Jouer : Chasse aux parasites</string>
+    <string name="comprendre_label">comprendre</string>
+    <string name="diagnostic_label">Diagnostiquer</string>
+    <string name="proteger_label">Se protéger</string>
+    <string name="soigner_label">Se soigner</string>
+    <string name="rechercher_label">Rechercher</string>
+    <string name="questions_reponses_label">Questions / Réponses</string>
+    <string name="quiz_label">Jouer : Le quiz</string>
+    <string name="chasse_parasites_label">Jouer : Chasse aux parasites</string>
+    <string name="title_activity_search">SearchActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">taper un nom</string>
     <!-- end label main fragment cardview imagebutton-->
 
-    <!--end text and titles of se_proteger-->
+
+    <!--string for appIntro sliders-->
+        <string name="title_activity_welcome">Home Screen</string>
+        <string name="next">SUIVANT</string>
+        <string name="skip">SAUTER</string>
+        <string name="start">COMPRIS</string>
+        <string name="slide_1_title">EDUPALU</string>
+        <string name="slide_1_desc">Bienvenue sur EduPalu!</string>
+        <string name="slide_2_title">Titre 2</string>
+        <string name="slide_2_desc">Description 2</string>
+        <string name="slide_3_title">Titre 3</string>
+        <string name="slide_3_desc">Description 3</string>
+        <string name="main_screen_desc">There are two steps to see the Intro Screen slider.\n\n1. Goto Settings -> apps -> welcome slider -> clear data.\n2. Click the below Play Again button</string>
+        <string name="action_guide_app">Guide Appli</string>
+    <string name="search_title">Recherche</string>
+    <!--//End string for appIntro sliders-->
 </resources>
