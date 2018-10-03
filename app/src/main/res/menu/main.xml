@@ -9,11 +9,18 @@
         android:icon="@drawable/ic_search"
         app:showAsAction="collapseActionView|ifRoom" />
 
+    <!--<item-->
+        <!--android:id="@+id/imageViewSearchMenu"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_guide_app"-->
+        <!--app:showAsAction="never" />-->
+
     <item
         android:id="@+id/action_about"
         android:orderInCategory="100"
         android:title="@string/action_about"
         app:showAsAction="never" />
+
     <!--<item-->
         <!--android:id="@+id/action_guide_app"-->
         <!--android:orderInCategory="100"-->

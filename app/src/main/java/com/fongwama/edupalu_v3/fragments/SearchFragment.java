@@ -1,6 +1,7 @@
 package com.fongwama.edupalu_v3.fragments;
 
 
+import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -39,6 +40,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     ArrayList<PlaceModel>listPlaces;
     ListAdapter listAdapter;
     private PlacePharmaDao placePharmaDao;
+    Cursor c = null;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -163,18 +165,56 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextChange(String newText) {
        // Toast.makeText(getActivity(), "we listen if text has changed", Toast.LENGTH_SHORT).show();
-        placePharmaDao.filterPlaceModel(newText);
-        listPlaces = placePharmaDao.filterPlaceModel(newText);
-        listAdapter = new ListAdapter(getContext(),listPlaces,this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(listAdapter);
 
+        getPlaces(newText);
         return false;
     }
 
     @Override
     public void onContactSelected(PlaceModel placeModel) {
         Toast.makeText(getActivity(), "numero : "+placeModel.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+
+    private void getPlaces(String searchTerm)
+    {
+      listPlaces.clear();
+
+
+
+        PlaceModel p=null;
+        c = placePharmaDao.filterPlaceModel(searchTerm);
+
+        if(c.getCount() > 0){
+
+            while (c.moveToNext()) {
+
+                int id=c.getInt(0);
+                String name=c.getString(1);
+                String adresse= c.getString(2);
+                String city = c.getString(3);
+                long lat = c.getLong(4);
+                long lon = c.getLong(5);
+                String tel1 = c.getString(6);
+                String tel2 = c.getString(7);
+
+                p=new PlaceModel();
+                p.setId(id);
+                p.setName(name);
+                p.setAddress(adresse);
+                p.setCity(city);
+                p.setLat(lat);
+                p.setLon(lon);
+                p.setTel1(tel1);
+                p.setTel2(tel2);
+
+                listPlaces.add(p);
+            }
+
+        }else{
+            Toast.makeText(getContext(), "Aucune correspondance n'a été trouvée", Toast.LENGTH_SHORT).show();
+        }
+
+        recyclerView.setAdapter(listAdapter);
     }
 }

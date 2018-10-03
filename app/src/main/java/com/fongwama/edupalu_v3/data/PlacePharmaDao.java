@@ -33,61 +33,18 @@ public class PlacePharmaDao extends DbHelper {
         return ip;
     }
 
-    public ArrayList<PlaceModel> getFilteredPlace(String filter){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<PlaceModel>placeModelsFiltered = new ArrayList<PlaceModel>();
-
-        Cursor cursor = db.query(true, PlacePharmaContract.PlacePharamEntry.TABLE_NAME,
-                new String[]{PlacePharmaContract.PlacePharamEntry.PLACE_NAME, PlacePharmaContract.PlacePharamEntry.PLACE_ADDRESS},
-                PlacePharmaContract.PlacePharamEntry.PLACE_NAME +" LIKE ?",new String[]{filter},null,null,null,null);
-        if(cursor.moveToFirst())
-            do{
-                placeModelsFiltered.add(
-                        new PlaceModel(
-                                cursor.getInt(0),
-                                cursor.getString(1),
-                                cursor.getString(2),
-                                cursor.getString(3),
-                                cursor.getLong(4),
-                                cursor.getLong(5),
-                                cursor.getString(6),
-                                cursor.getString(7)
-                        ));
-            }while (cursor.moveToNext());
-        return  placeModelsFiltered;
-    }
-
-    public ArrayList<PlaceModel>filterPlaceModel(String query){
+    public Cursor filterPlaceModel(String searchTerm){
         SQLiteDatabase db = this.getReadableDatabase();
 
+        Cursor c;
+
+        String[] columns={PlacePharmaContract.PlacePharamEntry._ID ,PlacePharmaContract.PlacePharamEntry.PLACE_NAME};
 
 
-        String SELECT_PLACE_MODEL = "SELECT * FROM "+PlacePharmaContract.PlacePharamEntry.TABLE_NAME+
-                " WHERE "+ PlacePharmaContract.PlacePharamEntry.PLACE_NAME+" LIKE %"+query+"%";
+            String sql="SELECT * FROM "+PlacePharmaContract.PlacePharamEntry.TABLE_NAME+" WHERE "+PlacePharmaContract.PlacePharamEntry.PLACE_NAME+" LIKE '%"+searchTerm+"%'";
+            c=db.rawQuery(sql,null);
+            return c;
 
-
-        ArrayList<PlaceModel>placeModelsList = new ArrayList<PlaceModel>();
-        Cursor cursor = db.rawQuery(SELECT_PLACE_MODEL,null);
-
-        if(cursor.getColumnCount() == 0){
-            String result ="Aucune donnée trouvée";
-        }else{
-            while (cursor.moveToNext()){
-                placeModelsList.add(
-                        new PlaceModel(
-                                cursor.getInt(0),
-                                cursor.getString(1),
-                                cursor.getString(2),
-                                cursor.getString(3),
-                                cursor.getLong(4),
-                                cursor.getLong(5),
-                                cursor.getString(6),
-                                cursor.getString(7)
-                        ));
-            }
-            cursor.close();
-        }
-        return placeModelsList;
     }
 
     public ArrayList<PlaceModel>getPlaceModels(){

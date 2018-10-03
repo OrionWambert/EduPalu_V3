@@ -21,6 +21,7 @@ import com.fongwama.edupalu_v3.fragments.DiagnosticFragment;
 import com.fongwama.edupalu_v3.fragments.MainFragment;
 import com.fongwama.edupalu_v3.fragments.ProtegerFragment;
 import com.fongwama.edupalu_v3.fragments.QuestionReponseFragment;
+import com.fongwama.edupalu_v3.fragments.SearchFragment;
 import com.fongwama.edupalu_v3.fragments.SoignerFragment;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -68,18 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
-
-        SearchView searchView = null;
-        if (searchItem != null) {
-            searchView = (SearchView) searchItem.getActionView();
-        }
-        if (searchView != null) {
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        }
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
@@ -96,14 +86,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }else if(id == R.id.action_search){
 
-//            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-//            FragmentTransaction ft = fm.beginTransaction();
-//            SearchFragment searchFragment = new SearchFragment();
-//            ft.replace(R.id.main_frame, searchFragment);
-//            ft.commit();
-
-//            SearchView searchView =(SearchView) item.getActionView();
-
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            SearchFragment searchFragment = new SearchFragment();
+            ft.replace(R.id.main_frame, searchFragment);
+            ft.commit();
 
         }
 //        else if(id == R.id.action_guide_app){
