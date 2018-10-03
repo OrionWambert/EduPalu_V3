@@ -1,4 +1,4 @@
-![logo EduPalu](app/src/main/res/drawable-v21/logo_edupalu.png)
+![logo EduPalu](app/src/main/res/drawable-v21/logo_EduPalu_text.png)
 
 ---
 
@@ -24,7 +24,7 @@ Utilisez EduPalu en ligne en cliquant sur le lient suivant : [fongwama.github.io
 
 ## Version Android
 
-EduPalu est disponible sur la bibliothèque d'applications Android Google Play Store : [ ![Google Play Badge](local/google-play-badge.png) ](https://play.google.com/store/apps/details?id=com.fcrm.edupalu)
+EduPalu est disponible sur la bibliothèque d'applications Android Google Play Store : [ ![Google Play Badge](app/src/main/res/drawable-v21/google-play-badge.png) ](https://play.google.com/store/apps/details?id=com.fcrm.edupalu)
 
 ## Les différentes rubriques d'EduPalu
 
